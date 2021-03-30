@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:a="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    a:layout_width="match_parent"
+    a:layout_height="match_parent"
+    tools:context=".UserDetailActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        a:id="@+id/guidelineAvatar"
+        a:layout_width="0dp"
+        a:layout_height="0dp"
+        a:orientation="horizontal"
+
+        app:layout_constraintGuide_percent="0.45" />
+
+    <ImageButton
+        a:id="@+id/imgBtnDetailGoBack"
+        a:layout_width="0dp"
+        a:layout_height="0dp"
+        a:src="@drawable/cross"
+
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintHeight_percent="0.07"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0" />
+
+    <ImageView
+        a:id="@+id/ivUserAvatar"
+        a:layout_width="0dp"
+        a:layout_height="0dp"
+
+        app:layout_constraintBottom_toTopOf="@id/guidelineAvatar"
+        app:layout_constraintDimensionRatio="h,1:1"
+        app:layout_constraintHeight_percent="0.15"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        tools:src="@drawable/android_black_rectangle" />
+
+    <TextView
+        a:id="@+id/tvUserName"
+        a:layout_width="0dp"
+        a:layout_height="0dp"
+        a:autoSizeStepGranularity="1sp"
+        a:autoSizeTextType="uniform"
+        a:gravity="center"
+        a:paddingVertical="10dp"
+
+        app:layout_constraintBottom_toTopOf="@id/tvUserBio"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivUserAvatar"
+
+        tools:text="user name" />
+
+    <TextView
+        a:id="@+id/tvUserBio"
+        a:layout_width="0dp"
+        a:layout_height="0dp"
+        a:autoSizeStepGranularity="1sp"
+        a:autoSizeTextType="uniform"
+        a:gravity="center"
+        a:paddingVertical="15dp"
+
+        app:layout_constraintBottom_toTopOf="@id/guidelineAvatar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvUserName"
+
+        tools:text="user autobiography" />
+
+    <View
+        a:id="@+id/separateLineUserAvatar"
+        a:layout_width="0dp"
+        a:layout_height="1dp"
+        a:background="@android:color/darker_gray"
+
+        app:layout_constraintBottom_toTopOf="@id/guidelineAvatar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintWidth_percent="0.9" />
+
+    <!--TODO: to recycle view-->
+    <ListView
+        a:id="@+id/lvUserDetail"
+        a:layout_width="0dp"
+        a:layout_height="0dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guidelineAvatar" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
