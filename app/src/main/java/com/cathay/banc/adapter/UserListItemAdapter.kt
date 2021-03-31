@@ -12,9 +12,6 @@ import com.cathay.banc.entity.UserListItem
 import com.cathay.banc.util.CircleTransform
 import com.squareup.picasso.Picasso
 
-/*
-    TODO: to recycle view
- */
 class UserListItemAdapter(
     private val context: Context,
     private val userItemList: List<UserListItem>,
