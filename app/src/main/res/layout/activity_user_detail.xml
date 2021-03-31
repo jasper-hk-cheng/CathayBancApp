@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     a:layout_width="match_parent"
     a:layout_height="match_parent"
-    tools:context=".UserDetailActivity">
+    tools:context=".activity.UserDetailActivity">
 
     <androidx.constraintlayout.widget.Guideline
         a:id="@+id/guidelineAvatar"

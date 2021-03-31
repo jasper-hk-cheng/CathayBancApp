@@ -29,10 +29,10 @@ import retrofit2.http.Path
         @POST("users/new")
         fun createUser(@Body user:User):Call<User>
  */
-interface GithubUserEndPoint {
+interface GitHubUserAPI {
     @GET("/users")
     fun getUserList(): Call<List<UserListItem>>
 
     @GET("users/{userName}")
-    fun getUserDetail(@Path("userName") userName:String):Call<UserDetail>
+    fun getUserDetail(@Path("userName") userName: String): Call<UserDetail>
 }

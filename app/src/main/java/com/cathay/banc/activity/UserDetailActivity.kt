@@ -1,4 +1,4 @@
-package com.cathay.banc
+package com.cathay.banc.activity
 
 import android.os.Bundle
 import android.widget.ImageButton
@@ -6,6 +6,7 @@ import android.widget.ImageView
 import android.widget.ListView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.cathay.banc.R
 import com.cathay.banc.adapter.UserDetailItemAdapter
 import com.cathay.banc.entity.UserDetail
 import com.cathay.banc.entity.UserDetailItem
