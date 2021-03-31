@@ -18,6 +18,7 @@
         a:id="@+id/imgBtnDetailGoBack"
         a:layout_width="0dp"
         a:layout_height="0dp"
+        a:background="@android:color/transparent"
         a:src="@drawable/cross"
 
         app:layout_constraintDimensionRatio="1:1"
@@ -37,9 +38,7 @@
         app:layout_constraintHeight_percent="0.15"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-
-        tools:src="@drawable/android_black_rectangle" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         a:id="@+id/tvUserName"
