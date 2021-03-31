@@ -12,7 +12,7 @@ import com.cathay.banc.contract.UserListContract
 import com.cathay.banc.entity.UserDetail
 import com.cathay.banc.entity.UserListItem
 import com.cathay.banc.presenter.UserPresenter
-import com.google.gson.Gson
+import com.cathay.banc.util.Constants.PARCELABLE_KEY_USER_DETAIL
 
 /*
 
@@ -75,9 +75,8 @@ class UserListActivity : AppCompatActivity(), UserListContract.IUserListView, Us
             Toast.makeText(this@UserListActivity, "No GitHub User Detail was received !!", Toast.LENGTH_SHORT).show()
             return
         }
-        // TODO: use parcelable instead...
         val intent = Intent(this@UserListActivity, UserDetailActivity::class.java)
-        intent.putExtra("userDetail", Gson().toJson(userDetail))
+        intent.putExtra(PARCELABLE_KEY_USER_DETAIL, userDetail)
 
         startActivity(intent)
     }

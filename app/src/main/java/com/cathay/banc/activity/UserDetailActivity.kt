@@ -11,7 +11,7 @@ import com.cathay.banc.adapter.UserDetailItemAdapter
 import com.cathay.banc.entity.UserDetail
 import com.cathay.banc.entity.UserDetailItem
 import com.cathay.banc.util.CircleTransform
-import com.google.gson.Gson
+import com.cathay.banc.util.Constants.PARCELABLE_KEY_USER_DETAIL
 import com.squareup.picasso.Picasso
 
 class UserDetailActivity : AppCompatActivity() {
@@ -59,7 +59,7 @@ class UserDetailActivity : AppCompatActivity() {
     }
 
     private fun loadData() {
-        userDetail = Gson().fromJson(intent.getStringExtra("userDetail"), UserDetail::class.java)
+        userDetail = intent.getParcelableExtra(PARCELABLE_KEY_USER_DETAIL)
         // adapter
         val userDetailItemList: List<UserDetailItem> = listOf(
             UserDetailItem(userDetail.login, if (userDetail.siteAdmin) "STAFF" else ""),
