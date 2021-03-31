@@ -49,7 +49,7 @@ class UserListItemAdapter(
          */
         val userItem = getItem(position)
         // avatar
-        Picasso.with(context).load(userItem.avatarUrl).transform(CircleTransform()).into(viewHolder.ivUserAvatar)
+        Picasso.with(context).load(userItem.avatarUrl).transform(CircleTransform).into(viewHolder.ivUserAvatar)
         // user name
         viewHolder.tvUserName.text = userItem.login
         // shape_badge

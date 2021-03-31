@@ -3,33 +3,45 @@ package com.cathay.banc.util
 import android.graphics.*
 import com.squareup.picasso.Transformation
 
-// TODO: 2021/3/30 refactor
-//      1. singleton
-//      2. code style -> kotlin
+object CircleTransform : Transformation {
 
-
-class CircleTransform : Transformation {
     override fun transform(source: Bitmap): Bitmap {
 
-        val size = Math.min(source.width, source.height)
+        val size = source.width.coerceAtMost(source.height)
         val x = (source.width - size) / 2
         val y = (source.height - size) / 2
+        /*
+            clip as square at the part of the rectangle center
+         */
         val squaredBitmap = Bitmap.createBitmap(source, x, y, size, size)
         if (squaredBitmap != source) {
             source.recycle()
         }
-        val bitmap = Bitmap.createBitmap(size, size, source.config)
-        val canvas = Canvas(bitmap)
-        val paint = Paint()
+        /*
+            ellipsis
+         */
         val shader = BitmapShader(
             squaredBitmap,
             Shader.TileMode.CLAMP, Shader.TileMode.CLAMP
         )
-        paint.setShader(shader)
-        paint.setAntiAlias(true)
-        val r = size / 2f
-        canvas.drawCircle(r, r, r, paint)
+        val paint = Paint()
+        paint.shader = shader
+        paint.isAntiAlias = true
+        /*
+            circle radius
+         */
+        val radius = size / 2f
+        /*
+            create canvas and draw
+         */
+        val bitmap = Bitmap.createBitmap(size, size, source.config)
+        val canvas = Canvas(bitmap)
+        canvas.drawCircle(radius, radius, radius, paint)
+        /*
+            release bitmap
+         */
         squaredBitmap.recycle()
+        //
         return bitmap
     }
 

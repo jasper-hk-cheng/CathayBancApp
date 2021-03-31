@@ -71,7 +71,7 @@ class UserDetailActivity : AppCompatActivity() {
 
     private fun setData() {
         // avatar
-        Picasso.with(this).load(userDetail.avatarUrl).transform(CircleTransform()).into(ivUserAvatar)
+        Picasso.with(this).load(userDetail.avatarUrl).transform(CircleTransform).into(ivUserAvatar)
         // user name
         tvUserName.text = userDetail.name
         // user autobiography
